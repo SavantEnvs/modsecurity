@@ -1,0 +1,9 @@
+project: savantenvs/modsecurity
+target: fuzz_transformations
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_transformations/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_transformations
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_transformations/fuzz_transformations.dict

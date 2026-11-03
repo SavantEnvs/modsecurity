@@ -1,0 +1,9 @@
+project: savantenvs/modsecurity
+target: fuzz_operators
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_operators/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_operators
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_operators/fuzz_operators.dict
