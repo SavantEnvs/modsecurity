@@ -1,0 +1,12 @@
+# Bake the FULL repo (incl. .git) into the commit image; drop only local build output and cruft.
+# NB: upstream's build/ directory holds tracked autoconf m4 macros, so it must NOT be ignored.
+mayhem/build-fuzz/
+mayhem/build-tests/
+*.o
+*.a
+*.so
+*.dylib
+**/__pycache__/
+.DS_Store
+*.swp
+*~
