@@ -1,0 +1,10 @@
+project: savantenvs/modsecurity
+target: fuzz_operators-mined-e5d00df
+# seed-from: https://app.mayhem.security/savantenvs/modsecurity/fuzz-operators
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_operators-mined-e5d00df/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_operators
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_operators-mined-e5d00df/fuzz_operators.dict
